@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SightLife Data</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/jpg" href="./img/favicon.ico">
+
+	
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Custom CSS 
+    <link rel="stylesheet" href="css/SightLife-ORG-20161010.css"> 
+    <link rel="stylesheet" href="css/default-grid.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <header id="layout-header">
+        <nav>
+            <div class="nav-wrapper">
+                <a href class="logo" href="https://www.sightlife.org/">
+                    <img src="./img/logo-SightLife.png" alt="SightLife">
+                </a>
+                <ul id="nav">
+                    <li>
+                        <a href="https://www.sightlife.org/What-We-Do/How-We-Do-It">What We Do</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sightlife.org/Get-Involved/Creating-Opportunities">Get Involved</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sightlife.org/About-Us/About-SightLife">About Us</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sightlife.org/Resources/Home">Resources</a>
+                    </li>
+                    <li>
+                        <a href="http://sightlifesurgical.com/Order-Tissue.aspx">Order Tissue</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sightlife.org/Contact-Us">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="https://www.sightlife.org/Get-Involved/One-Time-Monthly-Gift">Contribute</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="image">
+            <h2>Working to eliminate Corneal <br>Blindness worldwide by 2040</h2>
+            <img src="./img/Prakash_0380-Edit-2_crop.jpg">
+        </div>
+        <div id="global-summary">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="./img/la.png" alt="donors">
+                        <h2>Over 10 million people have corneal blindness. Imagine every person in Los Angeles not being able to see.</h2>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1>Over 98% of people living with corneal blindness live in developing countries.</h2>
+                        <img src="./img/graphic-recipients.png" alt="recipients">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="./img/india.png" alt="recipients">
+                        <h2>In India, there are 1.1 million people who can’t see out of either eye and another 5 million who can’t see out of one eye because of corneal blindness.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="select">
+            <h2>Select your state from the map below.</h2>
+        </div>
+        <div id='map' >
+        </div>
+        <div id="create">
+            <h2>Create your own visual for an Indian state.</h2>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Custom JS -->
+	<script src="js/app.js"></script>
+</body>
+</html>
