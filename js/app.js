@@ -1,21 +1,79 @@
 "use strict";
 
+var app = angular.module('SightLife', ["ui.router"]); //ngSanitize
 
-var mymap = L.map('map').setView([21,78],4);
+app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	maxZoom: 19,
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(mymap);
+	$stateProvider
 
-var popup = L.popup();
+	.state("home", {
+		url: "/home",
+		templateUrl: "./partials/home.html",
+		//controller: "HomeCtrl"
+	})
+	.state("AndhraPradesh", {
+		url: "/AndhraPradesh",
+		templateUrl: "partials/AndhraPradesh.html",
+	})
+	.state("State", {
+		url: "/State",
+		templateUrl: "partials/State.html",
+	});
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
+	$urlRouterProvider.otherwise("home");
 
-mymap.on('click', onMapClick);
+}]);
 
+app.controller('HomeCtrl', ['$scope', function(){}
+	
+]);
+
+
+/*$(function() {
+
+        Plotly.d3.csv('../india.csv', function(err, rows){
+
+			//var myPlot = document.getElementById('mydiv'),
+
+            function unpack(rows, key) {
+                return rows.map(function(row) { 
+                    return row[key]; 
+                });
+            }
+
+            var countryCode = unpack(rows, 'country_code');
+
+            var data = [{
+                type: 'scattergeo',
+                locations: countryCode,
+                locationmode: 'ISO-3',
+            }];
+
+            var layout = {
+                title: 'India',
+                showlegend: false,
+                geo: {
+                    scope: 'asia',
+                    projection: {
+                        type: 'equirectangular'
+                        
+                    },
+                    showcountries: true,
+                    showland: true,
+                    landcolor: 'rgb(217, 217, 217)',
+                    subunitwidth: 1,
+                    countrywidth: 1,
+                    subunitcolor: 'rgb(255,255,255)',
+                    countrycolor: 'rgb(255,255,255)'
+                },
+            };
+
+            Plotly.plot(mapdiv, data, layout, {showLink: false});
+
+			myPlot.on('plotly_click', function(data){
+				//location.href='www.google.com';
+			});
+
+        });
+
+});*/

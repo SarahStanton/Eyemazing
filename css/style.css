@@ -85,8 +85,10 @@ h2 {
     padding: 20px;
 }
 
-#map {
-    height: 500px;
+#form {
+    height: 300px;
+    text-align: center;
+    padding-top: 130px;
 }
 
 #select {
@@ -109,4 +111,8 @@ h2 {
 #create h2 {
     color: white;
     font-weight: lighter;
+}
+
+#mapdiv {
+    height: 700px;
 }
