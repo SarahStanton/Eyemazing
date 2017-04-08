@@ -1,102 +1,104 @@
-<div id="image">
-    <h2>Working to eliminate Corneal <br>Blindness worldwide by 2040</h2>
-    <img src="./img/Prakash_0380-Edit-2_crop.jpg">
-</div>
-<div id="global-summary">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <img src="./img/la.png" alt="donors">
-                <h2>Over 10 million people have corneal blindness. Imagine every person in Los Angeles not being able to see.</h2>
-            </div>
-            <div class="col-sm-4">
-                <h1>Over 98% of people living with corneal blindness live in developing countries.</h2>
-                <img src="./img/graphic-recipients.png" alt="recipients">
-            </div>
-            <div class="col-sm-4">
-                <img src="./img/india.png" alt="recipients">
-                <h2>In India, there are 1.1 million people who can’t see out of either eye and another 5 million who can’t see out of one eye because of corneal blindness.</h2>
+<div ng-controller="HomeCtrl">
+    <div id="image">
+        <h2>Working to eliminate Corneal <br>Blindness worldwide by 2040</h2>
+        <img src="./img/Prakash_0380-Edit-2_crop.jpg">
+    </div>
+    <div id="global-summary">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="./img/la.png" alt="donors">
+                    <h2>Over 10 million people have corneal blindness. Imagine every person in Los Angeles not being able to see.</h2>
+                </div>
+                <div class="col-sm-4">
+                    <h1>Over 98% of people living with corneal blindness live in developing countries.</h2>
+                    <img src="./img/graphic-recipients.png" alt="recipients">
+                </div>
+                <div class="col-sm-4">
+                    <img src="./img/india.png" alt="recipients">
+                    <h2>In India, there are 1.1 million people who can’t see out of either eye and another 5 million who can’t see out of one eye because of corneal blindness.</h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="select">
-    <h2>Select your state from the options below.</h2>
-</div>
-<div id='form'>
-    <!--<select id = 'mydropdown'>
-        <option value="none">Select a State</option>
-        <a ui-sref="AndhraPradesh"><option value="AndhraPradesh">Andhra Pradesh</option></a>
-        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-        <option value="Assam">Assam</option>
-        <option value="Bihar">Bihar</option>
-        <option value="Andhra Pradesh">Andhra Pradesh</option>
-        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-        <option value="Assam">Assam</option>
-        <option value="Bihar">Bihar</option>
-        <option value="Chhattisgarh">Chhattisgarh</option>
-        <option value="Goa">Goa</option>
-        <option value="Gujarat">Gujarat</option>
-        <option value="Haryana">Haryana</option>
-        <option value="Himachal Pradesh">Himachal Pradesh</option>
-        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-        <option value="Jharkhand">Jharkhand</option>
-        <option value="Karnataka">Karnataka</option>
-        <option value="Kerala">Kerala</option>
-        <option value="Madhya Pradesh">Madhya Pradesh</option>
-        <option value="Maharashtra">Maharashtra</option>
-        <option value="Manipur">Manipur</option>
-        <option value="Meghalaya">Meghalaya</option>
-        <option value="Mizoram">Mizoram</option>
-        <option value="Nagaland">Nagaland</option>
-        <option value="Odisha">Odisha</option>
-        <option value="Punjab">Punjab</option>
-        <option value="Rajasthan">Rajasthan</option>
-        <option value="Sikkim">Sikkim</option>
-        <option value="Tamil Nadu">Tamil Nadu</option>
-        <option value="Telangana">Telangana</option>
-        <option value="Tripura">Tripura</option>
-        <option value="Uttar Pradesh">Uttar Pradesh</option>
-        <option value="Uttarakhand">Uttarakhand</option>
-        <option value="West Bengal">West Bengal</option>
-    </select>-->
-    
-    <div>
-        <a ui-sref="State">Andhra Pradesh</a>
-        <a>Arunachal Pradesh</a>
-        <a>Assam</a>
-        <a>Bihar</a>
-        <a>Andhra Pradesh</a>
-        <a>Arunachal Pradesh</a>
-        <a>Assam</a>
-        <a>Bihar</a>
-        <a>Chhattisgarh</a>
-        <a>Goa</a>
-        <a>Gujarat</a>
-        <a>Haryana</a>
-        <a>Himachal Pradesh</a>
-        <a>Jammu and Kashmir</a>
-        <a>Jharkhand</a>
-        <a>Karnataka</a>
-        <a>Kerala</a>
-        <a>Madhya Pradesh</a>
-        <a>Maharashtra</a>
-        <a>Manipur</a>
-        <a>Meghalaya</a>
-        <a>Mizoram</a>
-        <a>Nagaland</a>
-        <a>Odisha</a>
-        <a>Punjab</a>
-        <a>Rajasthan</a>
-        <a>Sikkim</a>
-        <a>Tamil Nadu</a>
-        <a>Telangana</a>
-        <a>Tripura</a>
-        <a>Uttar Pradesh</a>
-        <a>Uttarakhand</a>
-        <a>West Bengal</a>
+    <div id="select">
+        <h2>Select your state from the options below.</h2>
     </div>
+    <div id='form'>
+        <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="state for state in states">
+            <option value="">Select a State</option>
+            <!--<option value="AndhraPradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>-->
+        </select>
+        
+        <!--<div id="selectList">
+            <a ui-sref="State">Andhra Pradesh</a>
+            <a>Arunachal Pradesh</a>
+            <a>Assam</a>
+            <a>Bihar</a>
+            <a>Andhra Pradesh</a>
+            <a>Arunachal Pradesh</a>
+            <a>Assam</a>
+            <a>Bihar</a>
+            <a>Chhattisgarh</a>
+            <a>Goa</a>
+            <a>Gujarat</a>
+            <a>Haryana</a>
+            <a>Himachal Pradesh</a>
+            <a>Jammu and Kashmir</a>
+            <a>Jharkhand</a>
+            <a>Karnataka</a>
+            <a>Kerala</a>
+            <a>Madhya Pradesh</a>
+            <a>Maharashtra</a>
+            <a>Manipur</a>
+            <a>Meghalaya</a>
+            <a>Mizoram</a>
+            <a>Nagaland</a>
+            <a>Odisha</a>
+            <a>Punjab</a>
+            <a>Rajasthan</a>
+            <a>Sikkim</a>
+            <a>Tamil Nadu</a>
+            <a>Telangana</a>
+            <a>Tripura</a>
+            <a>Uttar Pradesh</a>
+            <a>Uttarakhand</a>
+            <a>West Bengal</a>
+        </div>-->
 
+    </div>
+    <!--<div id="mapdiv"></div>-->
+    <div ui-view></div>
 </div>
-<!--<div id="mapdiv"></div>-->
-<div ui-view></div>

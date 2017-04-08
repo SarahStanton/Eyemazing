@@ -18,15 +18,45 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 	.state("State", {
 		url: "/State",
 		templateUrl: "partials/State.html",
+		controller: "StateCtrl",
 	});
 
 	$urlRouterProvider.otherwise("home");
 
 }]);
 
-app.controller('HomeCtrl', ['$scope', function(){}
+app.factory('myService', function() {
+
+	var service = {}; //object that is the service
+
+	//can store data in the service
+	service.currentState = "";
+
+	//can store fuctions as well!
+	service.addCurrentState = function(newState) { 
+		service.currentState = newState;
+	};
+
+	service.getCurrentState = function() {
+		return service.currentState;
+	};
+
+	return service; //return ("build") that service
+});
+
+app.controller('HomeCtrl', ['$scope', '$location', 'myService', function($scope, $location, myService){
+	$scope.states = ['Delhi', 'Tamil Nadu', 'Rajasthan', 'Andhra Pradesh', 'Telengana', 'Punjab', 'Gujarat', 'Kerala', 'Haryana', 'Chandigarh', 'UP', 'Maharashtra', 'West Bengal', 'Puducherry', 'Karnataka', 'Orissa/Odisha', 'Bihar', 'Madhya Pradesh', 'Jharkhand', 'Chhatisgarh', 'Goa','Himachal Pradesh', 'Jammu and Kashmir', 'Manipur', 'Assam', 'Tripura', 'Nagaland', 'Arunchal Pradesh', 'Mizoram, Sikkim']
+
+	$scope.updatePath = function() {
+		$location.path("/State");
+		myService.addCurrentState(this.singleSelect);
+    }
 	
-]);
+}]);
+
+app.controller("StateCtrl", ['$scope', 'myService', function($scope, myService){
+	$scope.State = myService.getCurrentState();
+}]);
 
 
 /*$(function() {
