@@ -5,15 +5,14 @@ var app = angular.module('SightLife', ["ui.router"]); //ngSanitize
 app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
-
-	.state("home", {
-		url: "/home",
+	.state("Country", {
+		url: "/Country",
+		templateUrl: "partials/country.html",
+	})
+	.state("India", {
+		url: "/Country/:India",
 		templateUrl: "./partials/home.html",
 		controller: "HomeCtrl"
-	})
-	.state("AndhraPradesh", {
-		url: "/AndhraPradesh",
-		templateUrl: "partials/AndhraPradesh.html",
 	})
 	.state("State", {
 		url: "/State/:StateName",
@@ -21,13 +20,23 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 		controller: "StateCtrl",
 	})
 
-	$urlRouterProvider.otherwise("home");
+	$urlRouterProvider.otherwise("Country");
 
 }]);
 
 app.factory('myService', function() {
 
 	var service = {}; //object that is the service
+
+	service.currentCountry = "";
+
+	service.addCurrentCountry = function(newCountry) { 
+		service.currentCountry = newCountry;
+	};
+
+	service.getCurrentCountry = function() {
+		return service.currentCountry;
+	};
 
 	service.currentState = "";
 
@@ -41,6 +50,17 @@ app.factory('myService', function() {
 
 	return service; //return service
 });
+
+app.controller('CountryCtrl', ['$scope', '$location', 'myService', function($scope, $location, myService){
+	$scope.countries = ['India']
+
+	$scope.updatePath = function() {
+		$location.path("/Country/:" + this.singleSelect);
+		console.log(this);
+		myService.addCurrentCountry(this.singleSelect);
+    }
+	
+}]);
 
 app.controller('HomeCtrl', ['$scope', '$location', 'myService', function($scope, $location, myService){
 	$scope.states = ['Delhi', 'Tamil Nadu', 'Rajasthan', 'Andhra Pradesh', 'Telengana', 'Punjab', 'Gujarat', 'Kerala', 'Haryana', 'Chandigarh', 'UP', 'Maharashtra', 'West Bengal', 'Puducherry', 'Karnataka', 'Orissa/Odisha', 'Bihar', 'Madhya Pradesh', 'Jharkhand', 'Chhatisgarh', 'Goa','Himachal Pradesh', 'Jammu and Kashmir', 'Manipur', 'Assam', 'Tripura', 'Nagaland', 'Arunchal Pradesh', 'Mizoram', 'Sikkim']
