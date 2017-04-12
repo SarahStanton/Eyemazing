@@ -57,11 +57,42 @@ li a {
     position: absolute;
     top: 200px; 
     left: 100px; 
-    width: 100%;
     color: white;
     font-weight: lighter;
     text-align: left;
 }
+
+#bannerState {
+    height: 450px;
+    background: #645D9B;
+}
+
+#bannerState h2 {
+    position: absolute;
+    top: 200px; 
+    left: 75px; 
+    color: white;
+    font-weight: lighter;
+    text-align: left;
+}
+
+#bannerState #stateIntro {
+    position: absolute;
+    top: 150px; 
+    left: 125px; 
+    color: white;
+    font-weight: lighter;
+    text-align: left;
+    padding: 20px;
+}
+
+.col-sm-4.pull-right img {
+    display: block;
+    margin: auto;
+    padding-top: 90px;
+}
+
+
 
 .col-sm-4 h1 {
     color: #654D9B;
@@ -115,4 +146,31 @@ h2 {
 
 #mapdiv {
     height: 700px;
+}
+
+#layout-footer #footer-links{
+    padding: 18px;
+    font-family: "HelveticaNeueW01-65Medi", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #6D6E70;
+    clear: both;    
+    
+}
+
+#layout-footer #footer-links a:link{
+    color: white;
+    text-decoration: none;
+    
+}
+
+#layout-footer #footer-links a:hover{
+    color:white;
+    font-style: italic, bold;
+}
+
+#layout-footer #footer-links #copyright{
+    padding-top: 5px;
+    display: inline;
+    vertical-align: top;
 }

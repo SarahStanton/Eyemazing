@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!--Plotly CDN-->
-<!--    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Load jQuery library -->
 <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
     <!-- Angular -->
@@ -69,8 +69,14 @@
     <main>
         <div ui-view></div>
     </main>
-    <footer>
-
+    <footer id="layout-footer">
+        <div id="nav-links">
+            <section id="footer-links">
+                <p><a href="/through-new-eyes-files/index.htm" target="_blank">The World Through New Eyes</a> &nbsp;/&nbsp; <a href="/Contact-Us">Contact us</a> &nbsp;/&nbsp; <a href="/About-Us/Career-Opportunities">Careers</a> &nbsp;/&nbsp; <a href="/For-Employees">For Employees</a></p>
+                <!-- Year is set in SightLife.js -->
+                <p id="copyright">&copy;<span></span> SightLife</p>
+            </section>
+        </div>
     </footer>
     <!-- Custom JS -->
 	<script src="js/app.js"></script>

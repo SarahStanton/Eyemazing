@@ -9,17 +9,17 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 	.state("home", {
 		url: "/home",
 		templateUrl: "./partials/home.html",
-		//controller: "HomeCtrl"
+		controller: "HomeCtrl"
 	})
 	.state("AndhraPradesh", {
 		url: "/AndhraPradesh",
 		templateUrl: "partials/AndhraPradesh.html",
 	})
 	.state("State", {
-		url: "/State",
+		url: "/State/:StateName",
 		templateUrl: "partials/State.html",
 		controller: "StateCtrl",
-	});
+	})
 
 	$urlRouterProvider.otherwise("home");
 
@@ -29,10 +29,8 @@ app.factory('myService', function() {
 
 	var service = {}; //object that is the service
 
-	//can store data in the service
 	service.currentState = "";
 
-	//can store fuctions as well!
 	service.addCurrentState = function(newState) { 
 		service.currentState = newState;
 	};
@@ -41,21 +39,91 @@ app.factory('myService', function() {
 		return service.currentState;
 	};
 
-	return service; //return ("build") that service
+	return service; //return service
 });
 
 app.controller('HomeCtrl', ['$scope', '$location', 'myService', function($scope, $location, myService){
-	$scope.states = ['Delhi', 'Tamil Nadu', 'Rajasthan', 'Andhra Pradesh', 'Telengana', 'Punjab', 'Gujarat', 'Kerala', 'Haryana', 'Chandigarh', 'UP', 'Maharashtra', 'West Bengal', 'Puducherry', 'Karnataka', 'Orissa/Odisha', 'Bihar', 'Madhya Pradesh', 'Jharkhand', 'Chhatisgarh', 'Goa','Himachal Pradesh', 'Jammu and Kashmir', 'Manipur', 'Assam', 'Tripura', 'Nagaland', 'Arunchal Pradesh', 'Mizoram, Sikkim']
+	$scope.states = ['Delhi', 'Tamil Nadu', 'Rajasthan', 'Andhra Pradesh', 'Telengana', 'Punjab', 'Gujarat', 'Kerala', 'Haryana', 'Chandigarh', 'UP', 'Maharashtra', 'West Bengal', 'Puducherry', 'Karnataka', 'Orissa/Odisha', 'Bihar', 'Madhya Pradesh', 'Jharkhand', 'Chhatisgarh', 'Goa','Himachal Pradesh', 'Jammu and Kashmir', 'Manipur', 'Assam', 'Tripura', 'Nagaland', 'Arunchal Pradesh', 'Mizoram', 'Sikkim']
 
 	$scope.updatePath = function() {
-		$location.path("/State");
+		$location.path("/State/:" + this.singleSelect);
+
 		myService.addCurrentState(this.singleSelect);
     }
 	
 }]);
 
-app.controller("StateCtrl", ['$scope', 'myService', function($scope, myService){
+app.controller("StateCtrl", ['$scope', '$http', '$location','myService', function($scope, $http, $location, myService){
 	$scope.State = myService.getCurrentState();
+
+	$http.get('../data/stateData.json').success(function(stateList) {
+		$scope.data = stateList[$scope.State];
+	});
+
+	$(function() {
+
+			Plotly.d3.csv('../data/tb_prev_2010.csv', function(err, rows){
+
+				function unpack(rows, key) {
+					return rows.map(function(row) { 
+						return row[key]; 
+					});
+				}
+
+				var countryCode = unpack(rows, 'country_code'),
+					prevalence = unpack(rows, 'prev_2010'),
+					countryPrevalence = [],
+					hoverText = [],
+					scale = 4000;
+
+				for ( var i = 0 ; i < prevalence.length; i++) {
+					var currentSize = prevalence[i] * scale;
+					var currentText = countryCode[i] + ": "+ Math.round(prevalence[i] * 100000) + " cases per 100K people";
+					countryPrevalence.push(currentSize);
+					hoverText.push(currentText);
+				}
+
+				var data = [{
+					type: 'scattergeo',
+					locations: countryCode,
+					locationmode: 'ISO-3',
+					hoverinfo: 'text',
+					text: hoverText,
+					marker: {
+						size: countryPrevalence,
+						color: countryPrevalence,
+						line: {
+							color: 'black',
+							width: 2
+						},
+					}
+				}];
+
+				var layout = {
+					title: 'World TB prevalence in 2010',
+					showlegend: false,
+					geo: {
+						scope: 'world',
+						projection: {
+							type: 'natural earth'
+							
+						},
+						showcountries: true,
+						showland: true,
+						landcolor: 'rgb(217, 217, 217)',
+						subunitwidth: 1,
+						countrywidth: 1,
+						subunitcolor: 'rgb(255,255,255)',
+						countrycolor: 'rgb(255,255,255)'
+					},
+				};
+
+				Plotly.plot(bubbleMap, data, layout, {showLink: false});
+
+			});
+
+	});
+
 }]);
 
 
