@@ -174,3 +174,54 @@ h2 {
     display: inline;
     vertical-align: top;
 }
+.tabs{
+    display: inline-block;
+    margin: 45px auto 0;
+    font-size: 0;
+}
+
+.tabs a{
+    color: #323232;
+    background-color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid #dddddd;
+    position: relative;
+    line-height: 1em;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+    text-decoration: none;
+}
+
+.tabs a:hover{
+    text-decoration: none;
+}
+
+.tabs a.selected {
+    /*z-index: 20;*/
+    color: #fff;
+    background-color: #654D9B;
+    border-color: #654D9B;
+    outline: none;
+    text-decoration: none;
+}
+
+.selected{
+    background-color: #654D9B;
+    border-color: #654D9B;
+}
+.tabs a:visited{
+    text-decoration: none;
+}
+ul {
+    display: block;
+    list-style-type: none;  
+}
+
+#case-study-sel{
+    text-align: center;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}

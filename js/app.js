@@ -24,6 +24,20 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 
 }]);
 
+app.directive('scrollToItem', function() {                                                      
+    return {                                                                                 
+        restrict: 'A',                                                                       
+        scope: {                                                                             
+            scrollTo: "@"                                                                    
+        },                                                                                   
+        link: function(scope, $elm,attr) {                                                   
+
+            $elm.on('click', function() {                                                    
+                $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, "slow");
+            });                                                                              
+        }                                                                                    
+    }});
+
 app.factory('myService', function() {
 
 	var service = {}; //object that is the service
@@ -70,6 +84,14 @@ app.controller('HomeCtrl', ['$scope', '$location', 'myService', function($scope,
 
 		myService.addCurrentState(this.singleSelect);
     }
+	//$scope.selectCase = function($event){
+		//console.log($event.srcElement.id);
+		//if($event.srcElement.id == "delhi"){
+		//	$("#case-study").append("<iframe class='timeline' src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=950' width='100%' height='950' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>");
+		//} else {
+		//	$("#case-study").append("<p>Hello world!</p>");
+		//}
+	//}
 	
 }]);
 

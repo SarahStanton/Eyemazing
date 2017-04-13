@@ -21,9 +21,21 @@
             </div>
         </div>
     </div>
+    <div id="case-study-sel">
+        <h2>Learn more about how Hospital Mandatory Notification Programs have already changed how we deliver transplants in rural and urban India.</h2>
+        <ul class="tabs">
+            <li><a href="" ng-click="case='delhi'" id="delhi" ng-class='{"selected":case== "delhi"}'> Delhi</a></li>
+            <li><a href="" ng-click="case='bhub'" id="bhub" ng-class='{"selected":case== "bhub"}'> Bhubaneshwar</a></li>
+        </ul>
+    </div>
     <!-- Change the order of the case study and the state selection??? -->
-    <div> 
-        <iframe class="timeline" src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=950' width='100%' height='950' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+    <div ng-switch on ="case">
+        <div id="case-study-delhi" ng-switch-default> 
+            <iframe class="timeline" src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=950' width='100%' height='950' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+        <div id="case-study-bhub" ng-switch-when="bhub">
+            <p>hello world!</p>
+        </div>
     </div>
     <div id="select">
         <h2>Select your state from the options below.</h2>
