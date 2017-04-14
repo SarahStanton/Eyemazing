@@ -1,9 +1,13 @@
 <div ng-controller="HomeCtrl">
     <div id="image">
-        <h2>Working to eliminate Corneal <br>Blindness worldwide by 2040</h2>
-        <img src="./img/Prakash_0380-Edit-2_crop.jpg">
+        <h2>In India, there are 1.1 million people <br>who can’t see out of either eye and <br>another 5 million who can’t see out <br>of one eye because of corneal <br>blindness.</h2>
+        <img src="./img/Prakash_0380-Edit-2_crop-2.jpg">
     </div>
-    <div id="global-summary">
+
+    <div id="countrySummary">
+        <h3>Background on corneal blindness in India. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+    </div>
+<!--    <div id="global-summary">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4">
@@ -20,7 +24,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div id="case-study-sel">
         <h2>Learn more about how Hospital Mandatory Notification Programs have already changed how we deliver transplants in rural and urban India.</h2>
         <ul class="tabs">
@@ -38,14 +42,15 @@
         </div>
     </div>
     <div id="select">
-        <h2>Select your state from the options below.</h2>
-    </div>
-    <div id='form'>
+        <h3>Select your state from the options below.</h3>
         <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="state for state in states">
             <option value="">Select a State</option>
         </select>
+    </div>
+    <!--<div id='form'>
         
-        <!--<div id="selectList">
+        
+        <div id="selectList">
             <a ui-sref="State">Andhra Pradesh</a>
             <a>Arunachal Pradesh</a>
             <a>Assam</a>
@@ -79,9 +84,9 @@
             <a>Uttar Pradesh</a>
             <a>Uttarakhand</a>
             <a>West Bengal</a>
-        </div>-->
+        </div>
 
-    </div>
+    </div>-->
     <!--<div id="mapdiv"></div>-->
     <div ui-view></div>
 </div>

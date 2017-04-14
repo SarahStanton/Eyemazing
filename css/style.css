@@ -55,7 +55,7 @@ li a {
 
 #image h2 {
     position: absolute;
-    top: 200px; 
+    top: 150px; 
     left: 100px; 
     color: white;
     font-weight: lighter;
@@ -78,7 +78,7 @@ li a {
 
 #bannerState #stateIntro {
     position: absolute;
-    top: 150px; 
+    top: 100px; 
     left: 125px; 
     color: white;
     font-weight: lighter;
@@ -94,8 +94,14 @@ li a {
 
 
 
-.col-sm-4 h1 {
+.col-sm-4 h2 {
     color: #654D9B;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.col-sm-4 h3 {
+    color: #A7A9AC;
     font-weight: lighter;
     text-align: center;
 }
@@ -107,6 +113,16 @@ li a {
 }
 
 h2 {
+    color: #A7A9AC;
+    font-weight: lighter;
+    text-align: center;
+}
+
+#countrySummary {
+    padding: 40px;
+}
+
+#countrySummary h3 {
     color: #A7A9AC;
     font-weight: lighter;
     text-align: center;
@@ -128,9 +144,15 @@ h2 {
     padding: 50px;
 }
 
-#select h2 {
+#select h3 {
     color: white;
+    text-align: center;
     font-weight: lighter;
+}
+
+#select #singleSelect {
+    display: block;
+    margin: 0 auto;
 }
 
 #create {
