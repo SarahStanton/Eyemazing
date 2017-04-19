@@ -7,11 +7,11 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 	$stateProvider
 	.state("Country", {
 		url: "/Country",
-		templateUrl: "partials/country.html",
+		templateUrl: "partials/countryGeneral.html",
 	})
 	.state("India", {
 		url: "/Country/:India",
-		templateUrl: "./partials/home.html",
+		templateUrl: "./partials/homeSpecific.html",
 		controller: "HomeCtrl"
 	})
 	.state("State", {

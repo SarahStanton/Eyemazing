@@ -1,6 +1,10 @@
 <div ng-controller="CountryCtrl">
     <div id="image">
         <h2>Working to eliminate Corneal <br>Blindness worldwide by 2040</h2>
+        <h3>Learn more about Corneal Blindness in your country</h3>
+        <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="country for country in countries">
+            <option value="">Select a Country</option>
+        </select>
         <img src="./img/Gracie_0793-edit-crop.jpg">
     </div>
     <div id="global-summary">
@@ -11,7 +15,7 @@
                     <h3>Over 10 million people have corneal blindness. Imagine every person in Los Angeles not being able to see.</h3>
                 </div>
                 <div class="col-sm-4">
-                    <h2>Over 98% of people living with corneal blindness live in developing countries. A standard operation can transform their lives.</h2>
+                    <h3>Over 98% of people living with corneal blindness live in developing countries. A standard operation can transform their lives.</h2>
                     <img src="./img/graphic-recipients.png" alt="recipients">
                 </div>
                 <div class="col-sm-4">
@@ -21,11 +25,11 @@
             </div>
         </div>
     </div>
-    <div id="select">
+<!--    <div id="select">
         <h3>Select your country from the options below.</h3>
         <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="country for country in countries">
             <option value="">Select a Country</option>
         </select>
-    </div>
+    </div>-->
     
 </div>

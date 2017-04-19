@@ -1,0 +1,98 @@
+<div ng-controller="HomeCtrl">
+    <div id="image">
+        <h2>India</h2>
+        <!--<h2>there are 1.1 million people <br>who can’t see out of either eye and <br>another 5 million who can’t see out <br>of one eye because of corneal <br>blindness.</h2>-->
+        <h3>Learn more about Corneal Blindness in your state</h3>
+        <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="state for state in states">
+            <option value="">Select a State</option>
+        </select>
+        <img src="./img/Prakash_0380-Edit-2_crop-2.jpg">
+    </div>
+
+<!--    <div id="countrySummary">
+        <h3></h3>
+    </div>-->
+<div id="global-summary">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-sm-4">
+                    <img src="./img/la.png" alt="donors">
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
+                </div>-->
+                <div class="col-sm-8" >
+                    <!--<h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </h3>-->
+                    <img id="indiaPic" src="./img/slideshow-map-item-03.jpg" alt="recipients">
+                </div>
+                <div class="col-sm-4">
+                    <!--<img src="./img/india.png" alt="recipients">-->
+                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div id="select">
+        <h3>Learn more about Corneal Blindness in your state</h3>
+        <select name="singleSelect" id = 'singleSelect' ng-model="singleSelect" ng-change="updatePath()" ng-options="state for state in states">
+            <option value="">Select a State</option>
+        </select>
+    </div>-->
+    <div id="case-study-sel">
+        <h2>Learn more about  Hospital Mandatory Notification Programs</h2>
+        <ul class="tabs">
+            <li><a href="" ng-click="case='delhi'" id="delhi" ng-class='{"selected":case== "delhi"}'> Delhi</a></li>
+            <li><a href="" ng-click="case='bhub'" id="bhub" ng-class='{"selected":case== "bhub"}'> Bhubaneshwar</a></li>
+        </ul>
+    </div>
+    <!-- Change the order of the case study and the state selection??? -->
+    <div ng-switch on ="case">
+        <div id="case-study-delhi" ng-switch-default> 
+            <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1NLBZjfYyQ3-UbtVHjjq_EpzAx5yg3U1CYuJjXcxl1K4&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+        <div id="case-study-bhub" ng-switch-when="bhub">
+            <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=15iF8U2oYfcwMyD9QzwvnmeHVpJNfNTX0MMSdfG003-4&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+    </div>
+    
+    <!--<div id='form'>
+        
+        
+        <div id="selectList">
+            <a ui-sref="State">Andhra Pradesh</a>
+            <a>Arunachal Pradesh</a>
+            <a>Assam</a>
+            <a>Bihar</a>
+            <a>Andhra Pradesh</a>
+            <a>Arunachal Pradesh</a>
+            <a>Assam</a>
+            <a>Bihar</a>
+            <a>Chhattisgarh</a>
+            <a>Goa</a>
+            <a>Gujarat</a>
+            <a>Haryana</a>
+            <a>Himachal Pradesh</a>
+            <a>Jammu and Kashmir</a>
+            <a>Jharkhand</a>
+            <a>Karnataka</a>
+            <a>Kerala</a>
+            <a>Madhya Pradesh</a>
+            <a>Maharashtra</a>
+            <a>Manipur</a>
+            <a>Meghalaya</a>
+            <a>Mizoram</a>
+            <a>Nagaland</a>
+            <a>Odisha</a>
+            <a>Punjab</a>
+            <a>Rajasthan</a>
+            <a>Sikkim</a>
+            <a>Tamil Nadu</a>
+            <a>Telangana</a>
+            <a>Tripura</a>
+            <a>Uttar Pradesh</a>
+            <a>Uttarakhand</a>
+            <a>West Bengal</a>
+        </div>
+
+    </div>-->
+    <!--<div id="mapdiv"></div>-->
+    <div ui-view></div>
+</div>

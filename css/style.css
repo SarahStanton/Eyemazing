@@ -53,11 +53,37 @@ li a {
     max-height: 100%;
 }
 
+#image h1 {
+    position: absolute;
+    top: 60px; 
+    left: 100px; 
+    color: white;
+    font-weight: lighter;
+    text-align: left;
+}
+
 #image h2 {
     position: absolute;
     top: 150px; 
     left: 100px; 
     color: white;
+    font-weight: lighter;
+    text-align: left;
+}
+
+#image h3 {
+    position: absolute;
+    top: 300px; 
+    left: 100px; 
+    color: white;
+    font-weight: lighter;
+    text-align: left;
+}
+
+#image select {
+    position: absolute;
+    top: 375px; 
+    left: 100px; 
     font-weight: lighter;
     text-align: left;
 }
@@ -92,7 +118,10 @@ li a {
     padding-top: 90px;
 }
 
-
+#indiaPic {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 .col-sm-4 h2 {
     color: #654D9B;
